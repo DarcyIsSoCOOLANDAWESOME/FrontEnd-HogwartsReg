@@ -1,12 +1,58 @@
 main {
-  margin: 10rem, 0rem, 10rem, 10rem;
+  margin: 4rem auto;
+  max-width: 800px;
+  width: 90%;
 }
-#personal-details {
+
+#titles-personal,
+#titles-sortinghat,
+#titles-account,
+#random-house,
+#enrol {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#personal-details,
+#account-access {
   display: grid;
-  /* Column 1 (Label) fits the text width, Column 2 (Input) takes the rest */
-  grid-template-columns: 120px 2fr;
-  gap: 15px 20px;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: 20px 15px;
   align-items: center;
-  max-width: 600px;
-  margin-bottom: 30px;
+  width: 100%;
+  margin: 0 auto 3rem auto;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#house--btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+#personal-details,
+#account-access {
+  display: grid;
+
+  grid-template-columns: 100px 1fr 100px 1fr;
+
+  gap: 20px 25px;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto 3rem auto;
+}
+
+#personal-details label,
+#account-access label {
+  text-align: right;
+  padding-right: 5px;
 }
