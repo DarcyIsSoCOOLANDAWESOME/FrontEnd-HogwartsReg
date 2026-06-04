@@ -1,7 +1,14 @@
+body {
+  /* background-color: #120e08; */
+}
 main {
   margin: 4rem auto;
   max-width: 800px;
   width: 90%;
+  border: 1px solid brown;
+  border-radius: 5%;
+  background-color: #120e08;
+  color: #826a37;
 }
 
 #titles-personal,
@@ -55,4 +62,17 @@ select {
 #account-access label {
   text-align: right;
   padding-right: 5px;
+}
+
+h1 {
+  color: #bcae33;
+}
+
+h4 {
+  color: #d2c551c4;
+}
+
+.--btns {
+  border: 1px solid brown;
+  background-color: red;
 }
