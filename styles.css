@@ -1,7 +1,12 @@
-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+main {
+  margin: 10rem, 0rem, 10rem, 10rem;
+}
+#personal-details {
+  display: grid;
+  /* Column 1 (Label) fits the text width, Column 2 (Input) takes the rest */
+  grid-template-columns: 120px 2fr;
+  gap: 15px 20px;
+  align-items: center;
+  max-width: 600px;
+  margin-bottom: 30px;
 }
