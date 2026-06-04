@@ -7,7 +7,7 @@
   </head>
   <body>
     <main>
-      <form action="">
+      <form id="regForm" action="">
         <div id="titles-personal">
           <h1>The Hogwarts Registry</h1>
           <h4>Enrolment of New Students - Academic Year 2026</h4>
@@ -35,13 +35,15 @@
           <p>Choose Your House, or let the sorting hat decide your fate...</p>
         </div>
         <div id="house--btns">
-          <button class="gryf--Btn">Gryffindor</button>
-          <button class="slyth--Btn">Slytherin</button>
-          <button class="rave--Btn">Ravenclaw</button>
-          <button class="huff--Btn">Hufflepuff</button>
+          <button type="button" class="gryf--Btn">Gryffindor</button>
+          <button type="button" class="slyth--Btn">Slytherin</button>
+          <button type="button" class="rave--Btn">Ravenclaw</button>
+          <button type="button" class="huff--Btn">Hufflepuff</button>
         </div>
         <div id="random-house">
-          <button class="rand--btn">Let the sorting hat choose</button>
+          <button type="button" class="rand--btn">
+            Let the sorting hat choose
+          </button>
         </div>
         <div id="titles-account"><h5>Account & Access</h5></div>
 
@@ -51,7 +53,7 @@
           <label for="password">Password</label>
           <input type="password" name="password" id="password" />
         </div>
-        <div id="enrol"><button>Enrol</button></div>
+        <div id="enrol" type="submit"><button>Enrol</button></div>
       </form>
     </main>
   </body>
