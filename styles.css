@@ -20,7 +20,7 @@ main {
   width: 90%;
   border: 1px solid brown;
   border-radius: 5%;
-  background-color: #120e08;
+  background-color: var(--formbg);
   color: var(--bodytext);
 }
 
@@ -78,11 +78,11 @@ select {
 }
 
 h1 {
-  color: #bcae33;
+  color: var(--h1text);
 }
 
 h4 {
-  color: #d2c551c4;
+  color: var(--h4text);
 }
 
 #--Btn {
