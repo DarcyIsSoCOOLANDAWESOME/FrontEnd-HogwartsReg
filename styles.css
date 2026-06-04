@@ -1,6 +1,19 @@
-body {
-  /* background-color: #120e08; */
+:root {
+  --bodytext: #826a37;
+  --h1text: #bcae33;
+  --h4text: #d2c551c4;
+  --formbg: #120e08;
+  --mainbg: black;
+  --gryfRed: #ae0001;
+  --gryfGold: #d3a625;
+  --slythGreen: #2a623d;
+  --slythnSilv: #aaaaaa;
+  --ravenBlue: #222f5b;
+  --ravenGold: #946b2d;
+  --huffleYel: #f0c75e;
+  --huffleBrown: #372e29;
 }
+
 main {
   margin: 4rem auto;
   max-width: 800px;
@@ -8,7 +21,7 @@ main {
   border: 1px solid brown;
   border-radius: 5%;
   background-color: #120e08;
-  color: #826a37;
+  color: var(--bodytext);
 }
 
 #titles-personal,
@@ -72,7 +85,6 @@ h4 {
   color: #d2c551c4;
 }
 
-.--btns {
+#--Btn {
   border: 1px solid brown;
-  background-color: red;
 }
