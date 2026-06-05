@@ -3,7 +3,7 @@
   --h1text: #bcae33;
   --h4text: #d2c551c4;
   --formbg: #120e08;
-  --mainbg: #0D0902;
+  --mainbg: #0d0902;
   --gryfRed: #ae0001;
   --gryfGold: #d3a625;
   --slythGreen: #2a623d;
@@ -14,6 +14,10 @@
   --huffleBrown: #372e29;
 }
 
+* {
+  color: var(--bodytext);
+}
+
 main {
   margin: 4rem auto;
   max-width: 800px;
@@ -21,7 +25,6 @@ main {
   border: 1px solid brown;
   border-radius: 5%;
   background-color: var(--formbg);
-  color: var(--bodytext);
 }
 
 #titles-personal,
@@ -86,6 +89,59 @@ h4 {
   color: var(--h4text);
 }
 
-#--Btn {
-  border: 1px solid brown;
+button {
+  border: 0.5px solid var(--gryfGold);
+  background-color: var(--mainbg);
+  color: var(--bodytext);
+}
+
+input {
+  border: 0.5px solid var(--gryfGold);
+  background-color: var(--mainbg);
+  color: var(--bodytext);
+}
+
+#sex {
+  border: 0.5px solid var(--gryfGold);
+  background-color: var(--mainbg);
+  color: var(--bodytext);
+}
+
+button:hover {
+  background-color: red;
+}
+
+#house--btns {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+  width: 100%;
+  max-width: 550px;
+  margin: 1.5rem auto;
+  box-sizing: border-box;
+}
+
+#house--btns input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#house--btns label {
+  background-color: #120e08;
+  border: 1px solid #43351c;
+  color: #826a37;
+  padding: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  user-select: none;
+  display: block;
+}
+
+#house--btns label:hover {
+  border-color: #826a37;
+  color: #c29e4c;
 }
