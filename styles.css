@@ -58,6 +58,7 @@ select {
   gap: 10px;
   margin-bottom: 1rem;
 }
+
 #personal-details,
 #account-access {
   display: grid;

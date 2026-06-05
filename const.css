@@ -1,0 +1,19 @@
+:root {
+  --bodytext: #826a37;
+  --h1text: #bcae33;
+  --h4text: #d2c551c4;
+  --formbg: #120e08;
+  --mainbg: #0D0902;
+  --gryfRed: #ae0001;
+  --gryfGold: #d3a625;
+  --slythGreen: #2a623d;
+  --slythnSilv: #aaaaaa;
+  --ravenBlue: #222f5b;
+  --ravenGold: #946b2d;
+  --huffleYel: #f0c75e;
+  --huffleBrown: #372e29;
+
+  --default-border: #2A251D;
+  --selected-border: #d4af37CC;
+  --gold-glow: #d4af37CC;
+}
