@@ -28,17 +28,21 @@
           </select>
 
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" />
+          <input type="number" name="age" id="age" min="1" />
         </div>
         <div id="titles-sortinghat">
           <h5>Sorting Hat</h5>
           <p>Choose Your House, or let the sorting hat decide your fate...</p>
         </div>
         <div id="house--btns">
-          <button type="button" class="gryf--Btn">Gryffindor</button>
-          <button type="button" class="slyth--Btn">Slytherin</button>
-          <button type="button" class="rave--Btn">Ravenclaw</button>
-          <button type="button" class="huff--Btn">Hufflepuff</button>
+          <input type="radio" id="gryffindor" name="house" value="gryffindor" />
+          <label for="gryffindor">Gryffindor</label><br />
+          <input type="radio" id="slytherin" name="house" value="slytherin" />
+          <label for="slytherin">Slytherin</label><br />
+          <input type="radio" id="ravenclaw" name="house" value="ravenclaw" />
+          <label for="ravenclaw">Ravenclaw</label>
+          <input type="radio" id="hufflepuff" name="house" value="hufflepuff" />
+          <label for="hufflepuff">Hufflepuff</label>
         </div>
         <div id="random-house">
           <button type="button" class="rand--btn">
