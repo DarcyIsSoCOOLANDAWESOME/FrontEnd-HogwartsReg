@@ -1,0 +1,6 @@
+need 9 select buttons with id to course
+
+on hover, slight highlight
+on click highlight
+
+if click = true, put those into jso and post

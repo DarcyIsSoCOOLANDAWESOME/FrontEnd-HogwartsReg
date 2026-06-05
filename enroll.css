@@ -1,0 +1,67 @@
+:root {
+  --bodytext: #826a37;
+  --h1text: #bcae33;
+  --h4text: #d2c551c4;
+  --formbg: #120e08;
+  --mainbg: #0D0902;
+  --gryfRed: #ae0001;
+  --gryfGold: #d3a625;
+  --slythGreen: #2a623d;
+  --slythnSilv: #aaaaaa;
+  --ravenBlue: #222f5b;
+  --ravenGold: #946b2d;
+  --huffleYel: #f0c75e;
+  --huffleBrown: #372e29;
+}
+
+
+h1, h4 {
+  color: var(--h1text);
+  text-align: center;
+}
+
+
+.optionsGrid {
+  margin: 4rem auto;
+  max-width: 90%;
+  width: 90%;
+  border: 1px solid var(--gryfGold);
+  border-radius: 5%;
+  background-color: var(--formbg);
+  color: var(--bodytext);
+}
+
+p  {
+    text-align: center;
+}
+
+body {
+    background-color: var(--mainbg);
+}
+
+* {
+    color: var(--bodytext);
+}
+
+
+.skillsGrid {
+
+}
+
+button {
+    border: 0.5px solid var(--gryfGold);
+    background-color:  var(--mainbg);
+    color: var(--bodytext);
+}
+
+
+
+/* options for body
+#0D0902 — Even darker, almost indistinguishable from pure black.
+#141008 — A tiny bit softer with a slight charcoal-gold warmth.
+#1A140A — Just enough gold to notice the warmth under bright lighting.
+
+confirm with darcy lolz
+
+*/
+
