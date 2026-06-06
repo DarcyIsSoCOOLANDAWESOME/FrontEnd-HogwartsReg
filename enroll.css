@@ -58,7 +58,8 @@ button:hover {
 }
 
 #submitBtn {
-    
+    background-color: goldenrod;
+    color: var(--mainbg);
 }
 
 
