@@ -17,3 +17,21 @@
   --selected-border: #d4af37CC;
   --gold-glow: #d4af37CC;
 }
+
+h1, h4 {
+  color: var(--h1text);
+  text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+body {
+    background-color: var(--mainbg);
+}
+
+* {
+    color: var(--bodytext);
+}
+

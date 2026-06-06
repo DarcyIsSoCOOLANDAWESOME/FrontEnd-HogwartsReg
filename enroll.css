@@ -1,21 +1,6 @@
 @import url('const.css');
 
-h1, h4 {
-  color: var(--h1text);
-  text-align: center;
-}
 
-p {
-    text-align: center;
-}
-
-body {
-    background-color: var(--mainbg);
-}
-
-* {
-    color: var(--bodytext);
-}
 
 .optionsGrid {
   margin: 4rem auto;
