@@ -1,5 +1,5 @@
 const optionBtns = document.querySelectorAll(".option");
-const counterText = document.getElementById('numSelected');
+const selectedCounter = document.getElementById('numSelected');
 const submitBtn = document.querySelector("#submitBtn")
 
 let selectedCourses = []
@@ -14,14 +14,25 @@ optionBtns.forEach ( btn => {
 
         let userChoice = e.target.innerText;
 
+        //btn = e.target => the html line
+
+        if (selectedCourses.includes(userChoice)) { //already in list, deselect
+            btn.classList.remove("glow")
+            let x = selectedCourses.indexOf(userChoice)
+            selectedCourses.splice(x, 1)
+
+        } else if (selectedCourses.length < 3) {
         
-        if (selectedCourses.length < 3) {
-        selectedCourses.push(userChoice);
+            selectedCourses.push(userChoice);
+            btn.classList.add("glow");
+
             if (selectedCourses.length == 3) {
                 submitBtn.disabled = false;
             } //check if 3
-        } //push if under 3
+        } //deselect if in list
+        
 
+        selectedCounter.innerText = `Selected[${selectedCourses.length}/3]`
         console.log(selectedCourses)
 
     } //close e

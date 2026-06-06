@@ -10,16 +10,17 @@ then post that raw body
 
 
 
-
-// Handle clicking on the course buttons
 optionButtons.forEach(button => {
     button.addEventListener('click', () => {
         const courseValue = button.textContent.trim();
 
         if (selectedCourses.includes(courseValue)) {
         // Already selected? Remove it from array and turn off highlight
+            
             selectedCourses = selectedCourses.filter(item => item !== courseValue);
             button.classList.remove('selected-highlight');
+
+
         } else if (selectedCourses.length < 3) {
         // New selection & room left? Add to array and turn on highlight
             selectedCourses.push(courseValue);

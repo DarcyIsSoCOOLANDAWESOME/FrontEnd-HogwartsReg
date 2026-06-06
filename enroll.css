@@ -28,8 +28,16 @@ body {
 }
 
 .optionsGrid button{
+    /* display: flex; */
+
+    margin: 4px;
+
+    /* just hor, al ver */
+    
     width: 30%;
-    height: 70%;
+    height: 80px;
+    ;
+    
 }
 
 button {
@@ -44,14 +52,13 @@ button:hover {
     
 }
 
-.selected-highlight {
+.glow {
+    border: 1px solid var(--selected-border);
     box-shadow: 0 0 12px var(--selected-border);
-
 }
 
 #submitBtn {
-    border: 1px solid var(--selected-border);
-    box-shadow: 0 0 12px var(--gold-glow);
+    
 }
 
 
