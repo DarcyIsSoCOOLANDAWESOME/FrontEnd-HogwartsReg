@@ -1,67 +1,56 @@
-:root {
-  --bodytext: #826a37;
-  --h1text: #bcae33;
-  --h4text: #d2c551c4;
-  --formbg: #120e08;
-  --mainbg: #0D0902;
-  --gryfRed: #ae0001;
-  --gryfGold: #d3a625;
-  --slythGreen: #2a623d;
-  --slythnSilv: #aaaaaa;
-  --ravenBlue: #222f5b;
-  --ravenGold: #946b2d;
-  --huffleYel: #f0c75e;
-  --huffleBrown: #372e29;
-}
+@import url('const.css');
 
-
-h1, h4 {
-  color: var(--h1text);
-  text-align: center;
-}
 
 
 .optionsGrid {
   margin: 4rem auto;
-  max-width: 90%;
+  max-width: 90vw;
   width: 90%;
   border: 1px solid var(--gryfGold);
-  border-radius: 5%;
+  border-radius: 5px;
   background-color: var(--formbg);
   color: var(--bodytext);
 }
 
-p  {
-    text-align: center;
-}
+.optionsGrid button{
+    /* display: flex; */
 
-body {
-    background-color: var(--mainbg);
-}
+    margin: 4px;
 
-* {
-    color: var(--bodytext);
-}
-
-
-.skillsGrid {
-
+    /* just hor, al ver */
+    
+    width: 30%;
+    height: 80px;
+    ;
+    
 }
 
 button {
-    border: 0.5px solid var(--gryfGold);
+    border: 1px solid #2A251D;
     background-color:  var(--mainbg);
     color: var(--bodytext);
+    border-radius: 4px;
+}
+
+button:hover {
+    border: 1px solid var(--selected-border);
+    
+}
+
+.glow {
+    border: 1px solid var(--selected-border);
+    box-shadow: 0 0 12px var(--selected-border);
+}
+
+#submitBtn {
+    background-color: goldenrod;
+    color: var(--mainbg);
 }
 
 
+/* 
 
-/* options for body
 #0D0902 — Even darker, almost indistinguishable from pure black.
 #141008 — A tiny bit softer with a slight charcoal-gold warmth.
 #1A140A — Just enough gold to notice the warmth under bright lighting.
-
-confirm with darcy lolz
-
 */
-
