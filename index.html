@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hogwarts Registry</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-      <form id="regForm" action="">
+  <body class="min-h-screen px-4 py-8">
+    <main class="mx-auto w-full max-w-4xl rounded-3xl">
+      <form id="regForm" action="" class="p-6 md:p-10">
         <div id="titles-personal">
           <h1>The Hogwarts Registry</h1>
           <h4>Enrolment of New Students - Academic Year 2026</h4>
           <h5>Personal details</h5>
         </div>
 
-        <div id="personal-details">
+        <div id="personal-details" class="grid grid-cols-1 gap-4 md:grid-cols-[100px_1fr_100px_1fr]">
           <label for="firstName">First Name</label>
-          <input type="text" name="firstName" id="firstName" />
+          <input type="text" name="firstName" id="firstName" required/>
 
           <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" />
+          <input type="text" name="lastName" id="lastName" required/>
 
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" min="1" />
+          <input type="number" name="age" id="age" min="1" required/>
         </div>
 
         <div id="titles-sortinghat">
@@ -30,7 +31,7 @@
           <p>Choose Your House, or let the sorting hat decide your fate...</p>
         </div>
 
-        <div id="house--btns">
+        <div id="house--btns" class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
           <input type="radio" id="GRYFFINDOR" name="house" value="GRYFFINDOR" />
           <label for="GRYFFINDOR">Gryffindor</label>
 
@@ -52,11 +53,11 @@
 
         <div id="titles-account"><h5>Account & Access</h5></div>
 
-        <div id="account-access">
+        <div id="account-access" class="grid grid-cols-1 gap-4 md:grid-cols-[100px_1fr]">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" required />
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
+          <input type="password" name="password" id="password" required/>
         </div>
 
         <div id="enrol">
