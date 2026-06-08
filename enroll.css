@@ -1,49 +1,73 @@
-@import url('const.css');
-
-
+@import url("const.css");
 
 .optionsGrid {
   margin: 4rem auto;
   max-width: 90vw;
   width: 90%;
-  border: 1px solid var(--selected-border);
-  border-radius: 5px;
+  border: 1px solid var(--gryfGold);
+  border-radius: 8px;
   background-color: var(--formbg);
   color: var(--bodytext);
+  padding: 32px 24px;
+  text-align: center;
 }
 
-.optionsGrid button{
-    /* display: flex; */
+.course-container {
+  display: grid;
 
-    margin: 4px;
+  grid-template-columns: repeat(3, 1fr);
 
-    /* just hor, al ver */
-    
-    width: 30%;
-    height: 80px;
-    ;
-    
+  gap: 24px;
+  justify-items: center;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.course-container button {
+  width: 100%;
+  max-width: 340px;
+  height: 100px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
 }
 
 button {
-    border: 1px solid #2A251D;
-    background-color:  var(--mainbg);
-    color: var(--bodytext);
-    border-radius: 4px;
+  border: 1px solid #3d3529;
+  background-color: var(--mainbg);
+  color: var(--bodytext);
+  border-radius: 6px;
+  font-family: inherit;
+  transition: all 0.25s ease-in-out;
 }
 
+button:hover {
+  border: 1px solid var(--selected-border);
+  background-color: #141008;
+  transform: translateY(-2px);
+}
 
+.glow {
+  border: 1px solid var(--selected-border);
+  box-shadow: 0 0 16px var(--selected-border);
+}
 
 #submitBtn {
-    background-color: goldenrod;
-    color: var(--mainbg);
-    cursor: pointer;
+  background-color: goldenrod;
+  color: var(--mainbg);
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-
-/* 
-
-#0D0902 — Even darker, almost indistinguishable from pure black.
-#141008 — A tiny bit softer with a slight charcoal-gold warmth.
-#1A140A — Just enough gold to notice the warmth under bright lighting.
-*/
+#submitBtn:hover {
+  background-color: #daa520;
+  transform: none;
+}

@@ -1,52 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Enrollment</title>
     <link rel="stylesheet" href="enroll.css" />
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <h1>Select your courses!</h1>
     <h4>Enrolment of New Students - Academic Year 2026</h4>
 
     <div class="optionsGrid">
+      <p>Course Enrolment (Select 3 Courses)</p>
+      <p id="numSelected">Selected [0/3]</p>
 
-        <p>Course Enrolment (Select 3 Courses)</p>
-        <p id="numSelected">Selected [0/3]</p>
-
-        <button class="btn option">Defence Against The Dark Arts</button>
-        <button class="btn option">Transfiguration</button>
-        <button class="btn option">Charms</button>
-        <button class="btn option">Potions</button>
-        <button class="btn option">Herbology</button>
-        <button class="btn option">History of Magic</button>
-        <button class="btn option">Astronomy</button>
-        <button class="btn option">Muggle Studies</button>
-        <button class="btn option">Magical Transportation</button>
+      <div class="course-container">
+        <button class="btn option" type="button">
+          Defence Against The Dark Arts
+        </button>
+        <button class="btn option" type="button">Transfiguration</button>
+        <button class="btn option" type="button">Charms</button>
+        <button class="btn option" type="button">Potions</button>
+        <button class="btn option" type="button">Herbology</button>
+        <button class="btn option" type="button">History of Magic</button>
+        <button class="btn option" type="button">Astronomy</button>
+        <button class="btn option" type="button">Muggle Studies</button>
+        <button class="btn option" type="button">Magical Transportation</button>
+      </div>
     </div>
 
     <div>
-        
-        <a href="enroll.html">
-             <button>Clear Selection</button>
-        </a>
-        
-       
-        
-        
-        <button id="submitBtn">Submit Choices</button>
+      <a href="enroll.html">
+        <button type="button">Clear Selection</button>
+      </a>
 
-        <p>Extra small p, Please Ensure you have chosen exactly 3 courses</p>
+      <button id="submitBtn" type="button">Submit Choices</button>
 
+      <p>Extra small p, Please Ensure you have chosen exactly 3 courses</p>
     </div>
 
-
-
-</body>
-
-<script src="./enroll.js" type="module" ></script>
-
+    <script src="enroll.js"></script>
+  </body>
 </html>
