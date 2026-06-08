@@ -1,11 +1,5 @@
-// ==========================================
-// 1. GLOBAL CONFIGURATION
-// ==========================================
 const BASE_URL = "http://localhost:8080";
 
-// ==========================================
-// 2. THE ENGINES (Your API Helper Functions)
-// ==========================================
 const postStudentData = async (data) => {
   const apiURL = `${BASE_URL}/api/users`;
   const params = {
@@ -38,15 +32,11 @@ const getStudentData = async () => {
   return jsonified;
 };
 
-// ==========================================
-// 3. THE TRIGGER (Your Form Event Listener)
-// ==========================================
 document
   .getElementById("regForm")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    // 1. Gather all the data fields from the UI
     const formData = Array.from(
       document.querySelectorAll("#regForm input, #regForm select"),
     ).reduce((acc, field) => {
@@ -61,10 +51,8 @@ document
 
     console.log("Form complete, sending data...", formData);
 
-    // 2. Call the engine function we defined right above
     const dbResult = await postStudentData(formData);
 
-    // 3. Handle the final result
     if (dbResult) {
       alert("Student successfully added to the database.");
     } else {
