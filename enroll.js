@@ -20,6 +20,7 @@ optionBtns.forEach ( btn => {
             btn.classList.remove("glow")
             let x = selectedCourses.indexOf(userChoice)
             selectedCourses.splice(x, 1)
+            submitBtn.disabled = true;
 
         } else if (selectedCourses.length < 3) {
         
@@ -45,13 +46,13 @@ optionBtns.forEach ( btn => {
 
 submitBtn.addEventListener("click", (e) => {
 
-    const data = {studentID: studentId, 
-        course1: selectedCourses[0], 
-        course2: selectedCourses[1], 
-        course3: selectedCourses[2] }
-
-        console.log(data);
-        postData(data);
+    const data = {"studentID": studentId, 
+        "course1": selectedCourses[0], 
+        "course2": selectedCourses[1], 
+        "course3": selectedCourses[2] };
+    
+    console.log(data);
+    postData(data);
 
 }) //close e and eL
 
@@ -64,7 +65,7 @@ const postData = async(data) => {
     const params = {
         method: "POST",
         body: JSON.stringify(data), //ensures data/body is json format
-        headers: {"Content-Type": "application/json; charset=UTF-8"} //telling API that its indeed json
+        headers: {"Content-Type": "application/json"} //telling API that its indeed json
     }
    
     try { //from docs
@@ -84,7 +85,7 @@ const postData2 = (data) => {
     const params = {
         method: "POST",
         body: JSON.stringify(data), //ensures data/body is json format
-        headers: {"Content-Type": "application/json; charset=UTF-8"} //telling API that its indeed json
+        headers: {"Content-Type": "application/json"} //telling API that its indeed json
     }
 
     const results = fetch(apiURL, params) //code from freecodecamp or smth
@@ -115,7 +116,7 @@ const updateCourses = () => {
     const params = {
         method: "PUT",
         body: JSON.stringify(data), //ensures data/body is json format
-        headers: {"Content-Type": "application/json; charset=UTF-8"} //telling API that its indeed json
+        headers: {"Content-Type": "application/json"} //telling API that its indeed json
     }
 
     const results = fetch(apiURL, params)
@@ -128,7 +129,7 @@ const updateCourses = () => {
 
 
 const deleteCourseData = async(id) => {
-    const apiURL = "https://domain.com/path/{id}"
+    const apiURL = "https://domain.com/path/${id}"
     const params = {method:"DELETE"}
 
     try {
