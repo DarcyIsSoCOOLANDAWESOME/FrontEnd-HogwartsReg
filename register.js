@@ -7,7 +7,7 @@ const BASE_URL = "http://localhost:8080";
 // 2. THE ENGINES (Your API Helper Functions)
 // ==========================================
 const postStudentData = async (data) => {
-  const apiURL = `${BASE_URL}/api/students`;
+  const apiURL = `${BASE_URL}/api/users`;
   const params = {
     method: "POST",
     body: JSON.stringify(data),
@@ -26,7 +26,7 @@ const postStudentData = async (data) => {
 };
 
 const getStudentData = async () => {
-  const apiURL = `${BASE_URL}/api/students`;
+  const apiURL = `${BASE_URL}/api/users`;
   let jsonified = null;
   try {
     const response = await fetch(apiURL);
@@ -37,8 +37,6 @@ const getStudentData = async () => {
   }
   return jsonified;
 };
-
-// ... (You can paste updateStudentData and deleteStudentData right here too!)
 
 // ==========================================
 // 3. THE TRIGGER (Your Form Event Listener)
@@ -57,15 +55,15 @@ document
       return { ...acc, [key]: field.value };
     }, {});
 
-    console.log("Form compiled! Sending envelope...", formData);
+    console.log("Form complete, sending data...", formData);
 
     // 2. Call the engine function we defined right above
     const dbResult = await postStudentData(formData);
 
     // 3. Handle the final result
     if (dbResult) {
-      alert("Sorted! Student successfully added to the database.");
+      alert("Student successfully added to the database.");
     } else {
-      alert("The sorting ceremony failed. Check your backend terminal.");
+      alert("Failed. Check your backend terminal.");
     }
   });
