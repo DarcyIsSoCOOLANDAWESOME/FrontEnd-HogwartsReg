@@ -7,14 +7,63 @@ const studentId = "idk lol"
 
 //const apiURL = idk bro, backend gotta lmk fam
 
+let dummyTable = [
+  {
+    "id": 1,
+    "name": "Defence Against the Dark Arts",
+    "professor": "Remus Lupin"
+  },
+  {
+    "id": 2,
+    "name": "Transfiguration DUMMYTABLE",
+    "professor": "Minerva McGonagall"
+  },
+  {
+    "id": 3,
+    "name": "Charms",
+    "professor": "Filius Flitwick"
+  },
+  {
+    "id": 4,
+    "name": "Potions",
+    "professor": "Severus Snape"
+  },
+  {
+    "id": 5,
+    "name": "Herbology",
+    "professor": "Pomona Sprout"
+  },
+  {
+    "id": 6,
+    "name": "History of Magic",
+    "professor": "Cuthbert Binns"
+  },
+  {
+    "id": 7,
+    "name": "Astronomy",
+    "professor": "Aurora Sinistra"
+  },
+  {
+    "id": 8,
+    "name": "Muggle Studies",
+    "professor": "Charity Burbage"
+  },
+  {
+    "id": 9,
+    "name": "Magical Transportation",
+    "professor": "Madam Hooch"
+  }
+]
+
 submitBtn.disabled = true; 
 
+
 optionBtns.forEach ( btn => { 
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", (e) => {        
+       
+        let userChoice = e.target.id;
 
-        let userChoice = e.target.innerText;
-
-        //btn = e.target => the html line
+        //e.target | btn => the html line
 
         if (selectedCourses.includes(userChoice)) { //already in list, deselect
             btn.classList.remove("glow")
@@ -57,6 +106,16 @@ submitBtn.addEventListener("click", (e) => {
 }) //close e and eL
 
 
+const renderOptions = (table) => {
+    
+    //table length is 9. This code will need adaption if more than 9 courses are given
+    for (let i = 0; i < table.length; i++) {
+        optionBtns[i].innerText = table[i].name;
+        optionBtns[i].id = table[i].id;
+  }
+  
+}
+
 //CRUD Methods
 
 const postData = async(data) => {
@@ -93,16 +152,20 @@ const postData2 = (data) => {
     .then((json) => console.log(json))  //probs not needed
     .catch ((error) => console.log("error:", error))
 
-    return results
+    return results;
 }
 
 
 const getData = async(apiURL) => {
     
+    const fetched = null;
+    const awaited = null; 
+    const jsonified = null;
+
     try {
-    const fetched = fetch(apiURL)
-    const awaited = await fetched
-    const jsonified = await awaited.json()
+    fetched = await fetch(apiURL);
+    awaited = await fetched;
+    jsonified = await awaited.json();
     } catch (error) {
         console.log("Error occured: "+ error);
     }
@@ -136,9 +199,16 @@ const deleteCourseData = async(id) => {
     const response = await fetch(apiURL, params)
     } catch (err) {
         console.log("errors again tbh,",err);
-        
     }
 
     return response
-
 }
+
+
+const main = () => {
+    renderOptions(dummyTable);
+    courseTable = getData("http://localhost:8080/api/courses")
+    console.log(courseTable);
+}
+
+main();
