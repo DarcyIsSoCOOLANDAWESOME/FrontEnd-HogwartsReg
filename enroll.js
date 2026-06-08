@@ -61,7 +61,7 @@ submitBtn.addEventListener("click", (e) => {
 
 const postData = async(data) => {
 
-    const apiURL = "https://domain.com/path/"
+    const apiURL = "https://domain.com/path/" 
     const params = {
         method: "POST",
         body: JSON.stringify(data), //ensures data/body is json format

@@ -18,14 +18,13 @@
   --gold-glow: #d4af37CC;
 }
 
-h1, h4 {
+h1, h3, h4 {
   color: var(--h1text);
   text-align: center;
 }
 
-p {
-    text-align: center;
-}
+p, h3 {text-align: center;}
+
 
 body {
     background-color: var(--mainbg);
@@ -33,5 +32,25 @@ body {
 
 * {
     color: var(--bodytext);
+}
+
+
+button:hover {
+    border: 1px solid var(--selected-border);
+    
+}
+
+.glow {
+    border: 1px solid var(--selected-border);
+    box-shadow: 0 0 12px var(--selected-border);
+}
+
+
+.defaultBorder {
+  margin: 4rem auto;
+  border: 1px solid var(--selected-border);
+  border-radius: 5px;
+  background-color: var(--formbg);
+  color: var(--bodytext);
 }
 

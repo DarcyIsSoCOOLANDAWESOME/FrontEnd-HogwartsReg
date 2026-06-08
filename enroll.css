@@ -6,7 +6,7 @@
   margin: 4rem auto;
   max-width: 90vw;
   width: 90%;
-  border: 1px solid var(--gryfGold);
+  border: 1px solid var(--selected-border);
   border-radius: 5px;
   background-color: var(--formbg);
   color: var(--bodytext);
@@ -32,19 +32,12 @@ button {
     border-radius: 4px;
 }
 
-button:hover {
-    border: 1px solid var(--selected-border);
-    
-}
 
-.glow {
-    border: 1px solid var(--selected-border);
-    box-shadow: 0 0 12px var(--selected-border);
-}
 
 #submitBtn {
     background-color: goldenrod;
     color: var(--mainbg);
+    cursor: pointer;
 }
 
 
