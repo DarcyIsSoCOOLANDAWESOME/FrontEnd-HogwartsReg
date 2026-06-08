@@ -56,6 +56,9 @@ submitBtn.addEventListener("click", (e) => {
 
     console.log( JSON.stringify(data) );
     
+    if (result = 200) {
+        window.location.href = "/dashboard.html"
+    }
 
 }) //close e and eL
 
@@ -74,7 +77,7 @@ const renderOptions = (table) => {
 
 const postData = async(data, ) => {
 
-    const apiURL = "";
+    const apiURL = "http://localhost:8080/xxxx"; //##link required
     const params = {
         method: "POST",
         body: JSON.stringify(data), //ensures data/body is json format
@@ -123,7 +126,6 @@ const getData = async(apiURL) => {
     } catch (error) {
         console.log("Error occured: ", error);
     }
-    //## code needs crazy checking
 
     return jsonified;
 }
