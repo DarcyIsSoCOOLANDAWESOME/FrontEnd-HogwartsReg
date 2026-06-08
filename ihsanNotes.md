@@ -8,19 +8,6 @@ submit:
 on click, take options from array put those into json, 
 then post that raw body
 
-JS:
-GET course table,
-map render name to buttons
-name from table to render
-
-select dada
-
-store id on button
-event listener can capture ID
-
-send back course ID
 
 
-Table
-
-student id | c1 | c2 | c3
+cors - cross orig reso sharing
