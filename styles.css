@@ -1,30 +1,26 @@
-:root {
-  --bodytext: #826a37;
-  --h1text: #bcae33;
-  --h4text: #d2c551c4;
-  --formbg: #120e08;
-  --mainbg: #0d0902;
-  --gryfRed: #ae0001;
-  --gryfGold: #d3a625;
-  --slythGreen: #2a623d;
-  --slythnSilv: #aaaaaa;
-  --ravenBlue: #222f5b;
-  --ravenGold: #946b2d;
-  --huffleYel: #f0c75e;
-  --huffleBrown: #372e29;
-}
+@import url("const.css");
 
 * {
   color: var(--bodytext);
+  box-sizing: border-box;
 }
 
 main {
   margin: 4rem auto;
   max-width: 800px;
   width: 90%;
-  border: 1px solid brown;
-  border-radius: 5%;
+  border-radius: 8px;
   background-color: var(--formbg);
+  padding: 20px;
+  border: 1px solid var(--selected-border);
+}
+
+h1 {
+  color: var(--h1text);
+}
+
+h4 {
+  color: var(--h4text);
 }
 
 #titles-personal,
@@ -39,35 +35,7 @@ main {
 #personal-details,
 #account-access {
   display: grid;
-  grid-template-columns: auto 1fr auto 1fr;
-  gap: 20px 15px;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto 3rem auto;
-}
-
-input,
-select {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#house--btns {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-
-#personal-details,
-#account-access {
-  display: grid;
-
   grid-template-columns: 100px 1fr 100px 1fr;
-
   gap: 20px 25px;
   align-items: center;
   width: 100%;
@@ -81,34 +49,15 @@ select {
   padding-right: 5px;
 }
 
-h1 {
-  color: var(--h1text);
-}
-
-h4 {
-  color: var(--h4text);
-}
-
-button {
-  border: 0.5px solid var(--gryfGold);
-  background-color: var(--mainbg);
-  color: var(--bodytext);
-}
-
-input {
-  border: 0.5px solid var(--gryfGold);
-  background-color: var(--mainbg);
-  color: var(--bodytext);
-}
-
+input,
+select,
 #sex {
+  width: 100%;
+  padding: 8px;
   border: 0.5px solid var(--gryfGold);
   background-color: var(--mainbg);
   color: var(--bodytext);
-}
-
-button:hover {
-  background-color: red;
+  border-radius: 4px;
 }
 
 #house--btns {
@@ -118,7 +67,6 @@ button:hover {
   width: 100%;
   max-width: 550px;
   margin: 1.5rem auto;
-  box-sizing: border-box;
 }
 
 #house--btns input[type="radio"] {
@@ -127,6 +75,7 @@ button:hover {
   width: 0;
   height: 0;
 }
+
 #house--btns label {
   background-color: #120e08;
   border: 1px solid #43351c;
@@ -139,9 +88,28 @@ button:hover {
   transition: all 0.3s ease;
   user-select: none;
   display: block;
+  width: 100%;
 }
 
 #house--btns label:hover {
   border-color: #826a37;
   color: #c29e4c;
+}
+
+#house--btns input[type="radio"]:checked + label {
+  background-color: #261f12;
+  border-color: var(--gryfGold);
+  color: #f0c365;
+  box-shadow: 0 0 14px rgba(130, 106, 55, 0.45);
+  transform: scale(1.03);
+}
+
+button {
+  border: 0.5px solid var(--gryfGold);
+  background-color: var(--mainbg);
+  color: var(--bodytext);
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
