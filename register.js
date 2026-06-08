@@ -55,6 +55,10 @@ document
       return { ...acc, [key]: field.value };
     }, {});
 
+    if (formData.age) {
+      formData.age = parseInt(formData.age, 10);
+    }
+
     console.log("Form complete, sending data...", formData);
 
     // 2. Call the engine function we defined right above
