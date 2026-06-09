@@ -4,7 +4,10 @@ const submitBtn = document.querySelector("#submitBtn")
 const h1 = document.querySelector("#h1-title")
 
 let selectedCourses = []
-const studentId = "1"  //cookies/token shi
+const studentId =sessionStorage.getItem('userId'); 
+console.log(studentId);
+
+
 submitBtn.disabled = true; 
 
 //const apiURL = idk bro, backend gotta lmk fam
@@ -51,18 +54,13 @@ submitBtn.addEventListener("click", async(e) => {
     
     h1.innerText = "Loading..."
 
-    results = await postData2(selectedCourses)
+    result = await postData2(selectedCourses)
 
     
-    if (result.status == 400 || result.status == 404) { //whole thing should be a try
-        console.log("probs flopped");
-        submitBtn.disabled = false
-        h1.innerText = "Error, clear selection and try again"
-    }
-    else {
-       // window.location.href = "../dashboard/dashboard.html"
+    
+    window.location.href = "../dashboard/dashboard.html"
         
-    }
+    
 
 
 

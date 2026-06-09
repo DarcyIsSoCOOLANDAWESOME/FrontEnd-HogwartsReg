@@ -9,10 +9,11 @@ const profileAge = document.querySelector("#profileAge");
 
 const crestImg = document.getElementById("houseCrest");
 
-
 const BASE_URL = "http://localhost:8080";
 
-let studentId = 5; //test purposes
+const studentId = sessionStorage.getItem('userId'); //test purposes
+
+console.log("",studentId);
 
 
 const getStudentData = async (studentId) => {
@@ -39,18 +40,16 @@ const populateDashboard = async () => {
     return;
   }
 
-
   const name = `${student.firstName} ${student.lastName}` || "N/a";
   const email = student.email || "N/A";
   const house = student.house.toLowerCase() || "Unsorted";
   const age = student.age || "N/A";
 
-  welcomeName.textContent = student.firstName;
+  welcomeName.textContent = name;
   profileName.textContent = name;
   profileEmail.textContent = email;
-  profileHouse.textContent = house; // e.g., Gryffindor
+  profileHouse.textContent = house.toLowerCase(); // e.g., Gryffindor
   profileAge.textContent = age;
-
 
   //## take ! off once images actually gotten
   if (!student.house) {
