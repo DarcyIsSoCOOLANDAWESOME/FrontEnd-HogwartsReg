@@ -1,114 +1,184 @@
 @import url("const.css");
 
-* {
-  color: var(--bodytext);
-  box-sizing: border-box;
+body {
+  background: #070501;
+  font-family: Georgia, serif;
 }
 
 main {
   margin: 4rem auto;
-  max-width: 800px;
+  max-width: 860px;
   width: 90%;
-  border-radius: 8px;
-  background-color: var(--formbg);
-  padding: 20px;
-  border: 1px solid var(--selected-border);
+  border: 1px solid #3d2b0f;
+  border-radius: 20px;
+  background: #0b0904;
+  padding: 2rem;
+}
+
+form {
+  padding: 2rem;
 }
 
 h1 {
-  color: var(--h1text);
+  color: #d4a62a;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
 }
 
 h4 {
-  color: var(--h4text);
+  color: #8f7745;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
-#titles-personal,
-#titles-sortinghat,
-#titles-account,
-#random-house,
-#enrol {
+h5 {
+  color: #7b5f28;
   text-align: center;
-  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  margin: 3rem 0 1.5rem;
 }
 
 #personal-details,
 #account-access {
   display: grid;
-  grid-template-columns: 100px 1fr 100px 1fr;
-  gap: 20px 25px;
-  align-items: center;
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto 3rem auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
 #personal-details label,
 #account-access label {
-  text-align: right;
-  padding-right: 5px;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #8f7745;
+  font-weight: bold;
+}
+
+#personal-details label,
+#account-access label,
+input {
+  grid-column: auto;
 }
 
 input,
 select {
   width: 100%;
-  padding: 8px;
-  border: 0.5px solid var(--gryfGold);
-  background-color: var(--mainbg);
-  color: var(--bodytext);
-  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  border: 1px solid #3d2b0f;
+  border-radius: 10px;
+  background: #050401;
+  color: #e0c98a;
+  font-size: 1.1rem;
+}
+
+input::placeholder {
+  color: #5f4b25;
+  font-style: italic;
 }
 
 #house--btns {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 15px;
-  width: 100%;
-  max-width: 550px;
-  margin: 1.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2rem 0;
 }
 
 #house--btns input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 #house--btns label {
-  background-color: #120e08;
-  border: 1px solid #43351c;
-  color: #826a37;
-  padding: 20px;
-  border-radius: 4px;
-  cursor: pointer;
+  border: 1px solid #3d2b0f;
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  user-select: none;
-  display: block;
-  width: 100%;
-}
-
-#house--btns label:hover {
-  border-color: #826a37;
-  color: #c29e4c;
-}
-
-#house--btns input[type="radio"]:checked + label {
-  background-color: #261f12;
-  border-color: var(--gryfGold);
-  color: #f0c365;
-  box-shadow: 0 0 14px rgba(130, 106, 55, 0.45);
-  transform: scale(1.03);
-}
-
-button {
-  border: 0.5px solid var(--gryfGold);
-  background-color: var(--mainbg);
-  color: var(--bodytext);
-  padding: 10px 20px;
-  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  background: #050401;
+  font-size: 1.1rem;
+}
+
+#GRYFFINDOR:checked + label {
+  background: #250707;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+#SLYTHERIN:checked + label {
+  background: #062114;
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+#RAVENCLAW:checked + label {
+  background: #061527;
+  border-color: #3498db;
+  color: #3498db;
+}
+
+#HUFFLEPUFF:checked + label {
+  background: #261f05;
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+label[for="GRYFFINDOR"]:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+label[for="SLYTHERIN"]:hover {
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+label[for="RAVENCLAW"]:hover {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+label[for="HUFFLEPUFF"]:hover {
+  border-color: #f1c40f;
+  color: #f1c40f;
+}
+.rand--btn,
+button[type="submit"] {
+  width: 100%;
+  border: 1px solid #3d2b0f;
+  border-radius: 10px;
+  background: #100b03;
+  color: #b89038;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button[type="submit"] {
+  margin-top: 2rem;
+  border-color: #9c741d;
+  font-size: 1.2rem;
+}
+
+#titles-sortinghat p {
+  color: #8f7745;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  #personal-details,
+  #account-access,
+  #house--btns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.crest {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.crest img {
+  width: 90px;
+  height: auto;
 }
