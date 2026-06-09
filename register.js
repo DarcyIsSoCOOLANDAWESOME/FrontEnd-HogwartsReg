@@ -53,8 +53,11 @@ document
 
     const dbResult = await postStudentData(formData);
 
+    sessionStorage.setItem("userId", `${dbResult.userId}`);
+
     if (dbResult) {
       alert("Student successfully added to the database.");
+      window.location.href = `Enroll/enroll.html`;
     } else {
       alert("Failed. Check your backend terminal.");
     }

@@ -8,10 +8,11 @@ const profileAge = document.querySelector("#profileAge");
 
 const crestImg = document.getElementById("houseCrest");
 
-
 const BASE_URL = "http://localhost:8080";
 
-let studentId = 1; //test purposes
+const studentId = sessionStorage.getItem('userId'); //test purposes
+
+console.log("",studentId);
 
 
 const getStudentData = async (studentId) => {
@@ -39,18 +40,16 @@ const populateProfile = async (student) => {
     return;
   }
 
-
   const name = `${student.firstName} ${student.lastName}` || "N/a";
   const email = student.email || "N/A";
   const house = student.house || "Unsorted";
   const age = student.age || "N/A";
 
-  welcomeName.textContent = "Welcome, " + name;
+  welcomeName.textContent = name;
   profileName.textContent = name;
   profileEmail.textContent = email;
-  profileHouse.textContent = house; // e.g., Gryffindor
+  profileHouse.textContent = house.toLowerCase(); // e.g., Gryffindor
   profileAge.textContent = age;
-
 
   //## take ! off once images actually gotten
   if (!student.house) {
@@ -71,8 +70,6 @@ const populateCourses = async(courses) => {
     tempDiv.innerText = `${courses[i].name}: ${courses[i].professorName} `
 
     coursesBox.appendChild(tempDiv);
-
-
   }
 }
 
