@@ -54,3 +54,7 @@ button:hover {
   color: var(--bodytext);
 }
 
+
+.hide {
+  display: none;
+}

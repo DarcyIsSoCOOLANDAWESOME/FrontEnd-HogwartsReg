@@ -1,4 +1,5 @@
 const coursesBox = document.querySelector("#coursesBox")
+const deleteBtn = document.querySelector("#deleteBtn")
 
 const welcomeName = document.getElementById("welcomeName")
 const profileName = document.querySelector("#profileName");
@@ -11,7 +12,7 @@ const crestImg = document.getElementById("houseCrest");
 
 const BASE_URL = "http://localhost:8080";
 
-let studentId = 1; //test purposes
+let studentId = 5; //test purposes
 
 
 const getStudentData = async (studentId) => {
@@ -39,13 +40,12 @@ const populateProfile = async (student) => {
     return;
   }
 
-
   const name = `${student.firstName} ${student.lastName}` || "N/a";
   const email = student.email || "N/A";
   const house = student.house.toLowerCase() || "Unsorted";
   const age = student.age || "N/A";
 
-  welcomeName.textContent = "Welcome, " + name;
+  welcomeName.textContent = student.firstName;
   profileName.textContent = name;
   profileEmail.textContent = email;
   profileHouse.textContent = house; // e.g., Gryffindor
@@ -62,7 +62,6 @@ const populateProfile = async (student) => {
 
 const populateCourses = async(courses) => {
 
-
   for (let i=0; i<4; i++) {
     console.log("course added");
     
@@ -71,11 +70,41 @@ const populateCourses = async(courses) => {
     tempDiv.innerText = `${courses[i].name}: ${courses[i].professorName} `
 
     coursesBox.appendChild(tempDiv);
-
-
   }
 }
 
+const deleteUser = async(id) => {
+    const apiURL = `${BASE_URL}/api/users/${studentId}`
+    const params = {method:"DELETE"}
+
+    try {
+    const response = await fetch(apiURL, params)
+    } catch (err) {
+        console.log("errors again tbh,",err);
+    }
+
+    return response
+}
+
+deleteBtn.addEventListener("click",  () => {
+
+  console.log("del click");
+  
+  const consent = confirm("Deleting your profile is a permanant action, the data can never be retrieved again. Are you sure?")
+  
+  if (!consent) {
+    console.log("Cancelled");
+    return;
+  } else {
+    console.log("Alohomora, evanesco")
+    coursesBox.classList.add("hide")
+    welcomeName.innerHTML = "Alohomora!"
+    deleteUser(studentId);
+  }
+
+
+
+ }) //method and eL close
 
 
 const studentData = await getStudentData(studentId);

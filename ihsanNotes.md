@@ -12,6 +12,15 @@ then post that raw body
 
 cors - cross orig reso sharing
 
+central JS state
+
+central.js
+
+- has variables like currentUserId
+
+Or window.localStorage
+
+
 >token v
 
 register.js
