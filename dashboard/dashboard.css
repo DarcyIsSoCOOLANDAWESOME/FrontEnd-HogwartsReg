@@ -1,4 +1,5 @@
 @import url(../const.css);
+<<<<<<< HEAD
 
 p {
   font-size: 1.1rem;
@@ -19,3 +20,18 @@ p {
   margin-bottom: 1.25rem;
   letter-spacing: 0.5px;
 }
+=======
+
+
+p {
+    font-size: 1.1rem;
+}
+
+#profileHouse {
+    text-transform: capitalize;
+}
+
+.course {
+    /* i aint touching no css lol */
+}
+>>>>>>> c4baa905b63b7a8c945e31011ff570ad77c7e7ff
