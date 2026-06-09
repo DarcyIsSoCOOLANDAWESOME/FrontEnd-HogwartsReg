@@ -42,7 +42,7 @@ const populateProfile = async (student) => {
 
   const name = `${student.firstName} ${student.lastName}` || "N/a";
   const email = student.email || "N/A";
-  const house = student.house || "Unsorted";
+  const house = student.house.toLowerCase() || "Unsorted";
   const age = student.age || "N/A";
 
   welcomeName.textContent = "Welcome, " + name;
