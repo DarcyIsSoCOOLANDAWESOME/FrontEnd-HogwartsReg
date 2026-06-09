@@ -1,11 +1,28 @@
+const coursesBox = document.querySelector("#coursesBox")
+
+const welcomeName = document.getElementById("welcomeName")
+const profileName = document.querySelector("#profileName");
+const profileEmail = document.querySelector("#profileEmail");
+const profileHouse = document.querySelector("#profileHouse");
+const profileAge = document.querySelector("#profileAge");
+
+const crestImg = document.getElementById("houseCrest");
+
+
 const BASE_URL = "http://localhost:8080";
 
-// 1. THE ENGINE: Fetch all students from the database
-const getStudentData = async () => {
-  const apiURL = `${BASE_URL}/api/users`;
+let studentId = 1; //test purposes
+
+
+const getStudentData = async (studentId) => {
+  const apiURL = `${BASE_URL}/api/users/${studentId}`;
+  
   try {
     const response = await fetch(apiURL);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`); }
+    
     return await response.json();
   } catch (error) {
     console.error("Error occurred while fetching students:", error);
@@ -13,42 +30,58 @@ const getStudentData = async () => {
   }
 };
 
-// 2. THE RENDERER: Inject data into the HTML DOM elements
-const populateDashboard = async () => {
-  const students = await getStudentData();
+//Render
+const populateProfile = async (student) => {
 
-  // Guard clause: Exit if no data returns or database is empty
-  if (!students || students.length === 0) {
+  // Guard clause, baso exit if student not found
+  if (!student || student.length == 0) {
     document.getElementById("profileName").textContent = "No student found.";
     return;
   }
 
-  // Grab the latest student enrolled (the last item in the database array)
-  const currentStudent = students[students.length - 1];
 
-  // Match these property keys exactly to what your Spring Boot DTO fields send back!
-  const firstName = currentStudent.firstName || "Unknown";
-  const lastName = currentStudent.lastName || "";
-  const email = currentStudent.email || "N/A";
-  const house = currentStudent.house || "Unsorted";
-  const age = currentStudent.age || "N/A";
+  const name = `${student.firstName} ${student.lastName}` || "N/a";
+  const email = student.email || "N/A";
+  const house = student.house || "Unsorted";
+  const age = student.age || "N/A";
 
-  // Update UI Text Content
-  document.getElementById("welcomeName").textContent = firstName;
-  document.getElementById("profileName").textContent =
-    `${firstName} ${lastName}`;
-  document.getElementById("profileEmail").textContent = email;
-  document.getElementById("profileHouse").textContent = house;
-  document.getElementById("profileAge").textContent = age;
+  welcomeName.textContent = "Welcome, " + name;
+  profileName.textContent = name;
+  profileEmail.textContent = email;
+  profileHouse.textContent = house; // e.g., Gryffindor
+  profileAge.textContent = age;
 
-  // Magical Extra: Dynamic House Crest display if you have images saved
-  const crestImg = document.getElementById("houseCrest");
-  if (currentStudent.house) {
-    // Assuming your images are named 'gryffindor.png', 'slytherin.png', etc.
+
+  //## take ! off once images actually gotten
+  if (!student.house) {
+    // 'gryffindor.png', 'slytherin.png'
     crestImg.src = `images/${house.toLowerCase()}.png`;
     crestImg.style.display = "block"; // Make the image visible
   }
 };
 
-// Run the function automatically when the page loads
-window.addEventListener("DOMContentLoaded", populateDashboard);
+const populateCourses = async(courses) => {
+
+
+  for (let i=0; i<4; i++) {
+    console.log("course added");
+    
+    let tempDiv = document.createElement("div")
+    tempDiv.classList.add("naturalBorder","course")
+    tempDiv.innerText = `${courses[i].name}: ${courses[i].professorName} `
+
+    coursesBox.appendChild(tempDiv);
+
+
+  }
+}
+
+
+
+const studentData = await getStudentData(studentId);
+console.log(studentData)
+
+
+populateProfile(studentData)
+
+populateCourses(studentData.courses)

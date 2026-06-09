@@ -1,6 +1,14 @@
-@import url(const.css);
+@import url(../const.css);
 
 
 p {
     font-size: 1.1rem;
+}
+
+#profileHouse {
+    text-transform: capitalize;
+}
+
+.course {
+    /* i aint touching no css lol */
 }
