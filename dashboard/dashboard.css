@@ -1,14 +1,29 @@
 @import url(../const.css);
 
-
 p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
+}
+.defaultBorder {
+  /* Inherits your background and border color from const.css automatically */
+  width: 90%;
+  max-width: 550px; /* Shrunk down from 850px to perfectly match the registration form */
+  margin: 1.5rem auto; /* Centers the boxes nicely with tighter layout gaps */
+  padding: 20px; /* Makes inner padding tighter so it looks clean and cozy */
+}
+
+.defaultBorder .section-title {
+  color: var(--gryfGold);
+  font-size: 1.1rem; /* Scaled down slightly to fit the narrower container */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
 }
 
 #profileHouse {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .course {
-    /* i aint touching no css lol */
+  /* i aint touching no css lol */
 }

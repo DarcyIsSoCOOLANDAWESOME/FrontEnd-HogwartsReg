@@ -31,14 +31,14 @@ const getStudentData = async (studentId) => {
   }
 };
 
-//Render
-const populateProfile = async (student) => {
+const populateDashboard = async () => {
+  const students = await getStudentData();
 
-  // Guard clause, baso exit if student not found
-  if (!student || student.length == 0) {
+  if (!students || students.length === 0) {
     document.getElementById("profileName").textContent = "No student found.";
     return;
   }
+
 
   const name = `${student.firstName} ${student.lastName}` || "N/a";
   const email = student.email || "N/A";
@@ -101,7 +101,6 @@ deleteBtn.addEventListener("click",  () => {
     welcomeName.innerHTML = "Alohomora!"
     deleteUser(studentId);
   }
-
 
 
  }) //method and eL close
