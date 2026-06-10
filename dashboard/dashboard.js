@@ -51,7 +51,7 @@ const populateProfile = async (student) => {
   profileAge.textContent = age;
 
   //## take ! off once images actually gotten
-  if (!student.house) {
+  if (student.house) {
     // 'gryffindor.png', 'slytherin.png'
     crestImg.src = `images/${house.toLowerCase()}.png`;
     crestImg.style.display = "block"; // Make the image visible
@@ -60,7 +60,7 @@ const populateProfile = async (student) => {
 
 const populateCourses = async(courses) => {
 
-  for (let i=0; i<4; i++) {
+  for (let i=0; i<10; i++) {
     console.log("course added");
     
     let tempDiv = document.createElement("div")
@@ -109,5 +109,4 @@ console.log(studentData)
 
 
 populateProfile(studentData)
-
 populateCourses(studentData.courses)
