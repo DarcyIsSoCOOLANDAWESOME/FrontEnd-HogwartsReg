@@ -32,10 +32,9 @@ const getStudentData = async (studentId) => {
   }
 };
 
-const populateDashboard = async () => {
-  const students = await getStudentData();
+const populateProfile = async (student) => {
 
-  if (!students || students.length === 0) {
+  if (!student || student.length === 0) {
     document.getElementById("profileName").textContent = "No student found.";
     return;
   }
